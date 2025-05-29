@@ -1,0 +1,7 @@
+{
+  "name": "loginsupabase",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

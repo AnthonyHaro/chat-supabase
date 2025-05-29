@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Chat con Supabase</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">Salir</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="true" class="chat-content" id="chat-content">
+  <div class="chat-container">
+    <div
+      *ngFor="let msg of messages"
+      class="bubble"
+      [ngClass]="{ 'me': msg.email === email, 'other': msg.email !== email }"
+    >
+      <div class="meta">{{ msg.email === email ? 'Tú' : msg.email }}</div>
+      <div class="text">{{ msg.content }}</div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer class="input-footer">
+  <ion-item lines="none">
+    <ion-input
+      [(ngModel)]="newMessage"
+      placeholder="Escribe tu mensaje..."
+      (keyup.enter)="sendMessage()"
+      class="message-input"
+    ></ion-input>
+    <ion-button fill="clear" (click)="sendMessage()">enviar
+      <ion-icon name="send" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-item>
+</ion-footer>

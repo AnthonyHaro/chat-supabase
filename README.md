@@ -1,6 +1,8 @@
 # ✉️ CHAT CON SUPABASE 
----
 Aplicación que funciona como chat entre usuarios
+
+---
+
 
 
 ## 🤔 ¿Qué hace esta aplicación? 
